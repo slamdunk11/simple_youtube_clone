@@ -5,12 +5,12 @@ const VideoItem = (props) => {
     const {channelTitle, title, thumbnails} = props.video.snippet
     
     return(
-    <li>
-        <div className={styles.box}>
-            <img src={thumbnails.medium.url}/>
+    <li className={styles.box}>
+        <img className={styles.img} src={thumbnails.medium.url}/>
+        <div className={styles.text}>
             <div>
-                <p>{title}</p>
-                <span>{channelTitle}</span>
+                <p className={styles.title}>{title}</p>
+                <span className={styles.channel}>{channelTitle}</span>
             </div>
         </div>
     </li>            

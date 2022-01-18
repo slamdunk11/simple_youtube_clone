@@ -1,14 +1,41 @@
 .box{
- box-shadow: 4px 4px 4px 4px rgba(0, 0, 0, 0.07);
- margin-bottom: 15px;
- width: 50%;
+    display: flex;
+    box-shadow: 3px 3px 5px 3px rgba(0, 0, 0, 0.07);
+    padding: 10px 10px 10px 10px;
+    align-self: stretch;
+    transform:scale(1);
+    /* transition:.1s; */
+    cursor: pointer;
+}
+.box:hover{
+    transform:scale(1.01);
 }
 .img{
-
+    width: 100%;
+    height: auto;
+    margin: 0 10px 0 0;
+}
+.text{
+    display: flex;
+    align-items: center;
 }
 .title{
-
+    font-size: 13px;
+    font-weight: 500;
+    margin: 0
 }
 .channel{
+    font-size: 12px;
+}
 
+@media screen and (max-width: 1013px){
+    .box{
+        display: block;
+    }
+}
+@media screen and (min-width: 1184px){
+    .img{
+        max-width: 340px;
+        max-height: 200px;
+    }
 }

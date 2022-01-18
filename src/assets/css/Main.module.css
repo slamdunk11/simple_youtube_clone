@@ -1,8 +1,18 @@
 .box{
     margin: 0 50px 0 50px;
-    /* border: 1px solid red; */
 }
 .list{
+    display: grid;
+
+    /* grid-template-columns: 1fr 1fr; */
+    grid-template-columns: repeat(2, minmax(180px, auto));
+    gap: 11px;
     list-style: none;
     padding-left:0px;
+}
+
+@media screen and (max-width: 550px){
+    .list{
+        grid-template-columns: 1fr;
+    }
 }
