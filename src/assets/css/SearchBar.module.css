@@ -27,6 +27,7 @@
     line-height: 29px;
 
 }
+.input:focus{outline:none;}
 .button{
     background-color: #343434;
     color: white;

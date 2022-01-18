@@ -11,12 +11,25 @@ const config = {
                 part: 'snippet',
                 chart: 'mostPopular',
                 maxResults: 25,
-                key: config.key
+                key: config.key,
+                // regionCode:'KR',
+            }
+        })
+    }
+
+    function searchVideoListApi(searchKeyword){
+        return axios.get(`${config.baseUrl}search`, {
+            params: {
+                part: 'snippet',
+                maxResults: 25,
+                key: config.key,
+                q: searchKeyword,
             }
         })
     }
 
 export {
-    getVideoList
+    getVideoList,
+    searchVideoListApi,
 }
 

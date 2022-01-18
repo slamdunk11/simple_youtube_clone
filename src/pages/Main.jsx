@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { useEffect } from 'react';
 // import youtubeApi from '../api/index/youtubeApi'
-import { getVideoList } from '../api/index';
+import { getVideoList, searchVideoListApi } from '../api/index';
 import SearchBar from '../components/SearchBar';
 import VideoItem from '../components/VideoItem';
 import styles from '../assets/css/Main.module.css'
@@ -17,9 +17,18 @@ const Main = (props) => {
             )
         .catch(error=> console.log(error))
     }, [])
+    const searchContent = (searchKeyword) => {
+        searchVideoListApi(searchKeyword)
+        .then(response => {
+            // console.log('searchKeyword', inputRef.current.value)
+            // console.log('result', response.data)
+            setVideoItems(response.data.items);
+        })
+        .catch(error => console.log(error))
+    }
     return(
         <>
-            <SearchBar/>
+            <SearchBar searchContent={searchContent}/>
             <div className={styles.box}>
                 <ul className={styles.list}>
                     {
